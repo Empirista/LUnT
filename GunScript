@@ -1,0 +1,30 @@
+local player = game.Players.LocalPlayer
+local inputService = game:GetService("UserInputService")
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local workspace = game:GetService("Workspace")
+
+local cylinder = Instance.new("Part")
+cylinder.Shape = Enum.PartType.Cylinder
+cylinder.Size = Vector3.new(1, 1, 1)
+cylinder.Anchored = false
+cylinder.CanCollide = true
+cylinder.Position = player.Character.HumanoidRootPart.Position + Vector3.new(0, 2, 0)
+cylinder.Parent = workspace
+
+cylinder.Touched:Connect(function(hit)
+	local humanoid = hit.Parent:FindFirstChild("Humanoid")
+	if humanoid then
+		humanoid.Health = humanoid.Health - 30
+	end
+end)
+
+inputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+	if input.KeyCode == Enum.KeyCode.H then
+		
+		cylinder.Velocity = Vector3.new(0, 100, 0)
+	end
+end)
+-- Gun script i made when i was bored
+-- this scripr had so many errors, but i fixed somd of them btw
+-- Well, the idea is make the cylinder move to an target x and detect collision
