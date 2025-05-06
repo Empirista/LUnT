@@ -1,0 +1,8 @@
+SC = 1
+local humanoid = game.workspace:WaitForFirstChild("Humanoid")
+while humanoid do
+  SC = SC + 1
+  wait(1)
+end
+-- Counts seconds via humanoid, not that hard at all
+ 
