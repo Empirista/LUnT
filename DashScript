@@ -1,0 +1,14 @@
+local humanoidRootPart = game.workspace:WaitForChild("HumanoidRootPart")
+local DD = 0.5
+local KeyCodeF = Enum.KeyCode.F
+local DS = 10
+humanoidRootPart.AssemblyLinearVelocity = DS * DD
+while AssemblyLinearVelocity
+ if KeyCodeF then 
+   return nil
+ else
+   humanoidRootPart.AssemblyLinearVelocity = DS * DD
+ end
+end
+
+--script mande by Scratch, might have syntax errors or smth but i dont really care
